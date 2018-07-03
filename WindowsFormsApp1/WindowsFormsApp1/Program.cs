@@ -18,13 +18,13 @@ namespace WindowsFormsApp1
            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
+
             Application.Run(new MainForm());
-=======
-            Application.Run(new Form1());
+
+            
             
 
->>>>>>> 4a488ca0eeabf48d55db7a94f4dfaa73aabd479c
+
         }
 
       }
