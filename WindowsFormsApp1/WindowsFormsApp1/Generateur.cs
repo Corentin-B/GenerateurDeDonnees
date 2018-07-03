@@ -8,12 +8,18 @@ namespace WindowsFormsApp1
 {
     class Generateur
     {
-        public static string Generateurdonnee()
+        public static string GenerateurdonneeClient()
         {
             //Nom
             string Nom = RandFichier("Ressources\\Nom.txt");
             //Prenom
             string Prenom = RandFichier("Ressources\\Prenom.txt");
+
+            return Nom + "," + Prenom + ",";
+        }
+
+        public static string GenerateurdonneeCommande()
+        {
             //Pays
             string Pays = RandFichier("Ressources\\Pays.txt");
             //Liste
@@ -29,20 +35,20 @@ namespace WindowsFormsApp1
             //Quantité
             Random rndo = new Random();
             System.Threading.Thread.Sleep(1);
-            string Quantite = ""+ rndo.Next(1, 500);
+            string Quantite = "" + rndo.Next(1, 500);
 
-
-
-            return Nom +","+ Prenom + "," + Pays + "," + Liste + "," + Couleur + "," + Variante + "," + Texture +"," + Conditionnement + "," + Quantite;
+            return Pays + "," + Liste + "," + Couleur + "," + Variante + "," + Texture + "," + Conditionnement + "," + Quantite;
         }
 
         private static string RandFichier(string fichier)
         {
             string[] lignes = System.IO.File.ReadAllLines(fichier);
 
+            System.Threading.Thread.Sleep(1);
+
             Random rnd = new Random();
-            System.Threading.Thread.Sleep(10);
             int nombrerandom = rnd.Next(1, lignes.Length);
+            nombrerandom --;
 
             return lignes[nombrerandom];
         }
