@@ -24,23 +24,11 @@ namespace WindowsFormsApp1
             progressBar_envoi.Value = 0;
 
             progressBar_generation.Value = 100;
-            Label_retour.Text = "OK - Génération effectuée";
+
+            string retour = Controleur.Class1.ControlGenerateur(1, comboBox1.Text);
+            Label_retour.Text = retour;
+            textBox1.Text = retour;
             Label_retour.ForeColor = Color.Green;
-
-            if(radioButton_donnees.Checked == true)
-            {
-                //Call genedonnees
-            }
-
-            if (radioButton_processus.Checked == true)
-            {
-                //Call geneprocess
-            }
-
-            if (radioButton_commandes.Checked == true)
-            {
-                //Call genecmd
-            }
         }
 
         private void Btn_Envoi_Click(object sender, EventArgs e)

@@ -32,14 +32,13 @@
             this.Label_Text_nbdonnee = new System.Windows.Forms.Label();
             this.Label_Text_typedonnee = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.radioButton_donnees = new System.Windows.Forms.RadioButton();
-            this.radioButton_processus = new System.Windows.Forms.RadioButton();
-            this.radioButton_commandes = new System.Windows.Forms.RadioButton();
             this.Btn_generation = new System.Windows.Forms.Button();
             this.Btn_envoi = new System.Windows.Forms.Button();
             this.progressBar_generation = new System.Windows.Forms.ProgressBar();
             this.progressBar_envoi = new System.Windows.Forms.ProgressBar();
             this.Label_retour = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +66,7 @@
             // 
             this.Label_Text_typedonnee.AutoSize = true;
             this.Label_Text_typedonnee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_Text_typedonnee.Location = new System.Drawing.Point(259, 44);
+            this.Label_Text_typedonnee.Location = new System.Drawing.Point(241, 44);
             this.Label_Text_typedonnee.Name = "Label_Text_typedonnee";
             this.Label_Text_typedonnee.Size = new System.Drawing.Size(107, 15);
             this.Label_Text_typedonnee.TabIndex = 0;
@@ -86,50 +85,11 @@
             this.numericUpDown1.Size = new System.Drawing.Size(106, 21);
             this.numericUpDown1.TabIndex = 3;
             // 
-            // radioButton_donnees
-            // 
-            this.radioButton_donnees.AutoSize = true;
-            this.radioButton_donnees.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_donnees.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_donnees.Location = new System.Drawing.Point(262, 69);
-            this.radioButton_donnees.Name = "radioButton_donnees";
-            this.radioButton_donnees.Size = new System.Drawing.Size(75, 19);
-            this.radioButton_donnees.TabIndex = 4;
-            this.radioButton_donnees.TabStop = true;
-            this.radioButton_donnees.Text = "Données";
-            this.radioButton_donnees.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_processus
-            // 
-            this.radioButton_processus.AutoSize = true;
-            this.radioButton_processus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_processus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_processus.Location = new System.Drawing.Point(262, 92);
-            this.radioButton_processus.Name = "radioButton_processus";
-            this.radioButton_processus.Size = new System.Drawing.Size(82, 19);
-            this.radioButton_processus.TabIndex = 5;
-            this.radioButton_processus.TabStop = true;
-            this.radioButton_processus.Text = "Processus";
-            this.radioButton_processus.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_commandes
-            // 
-            this.radioButton_commandes.AutoSize = true;
-            this.radioButton_commandes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButton_commandes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton_commandes.Location = new System.Drawing.Point(262, 115);
-            this.radioButton_commandes.Name = "radioButton_commandes";
-            this.radioButton_commandes.Size = new System.Drawing.Size(96, 19);
-            this.radioButton_commandes.TabIndex = 6;
-            this.radioButton_commandes.TabStop = true;
-            this.radioButton_commandes.Text = "Commandes";
-            this.radioButton_commandes.UseVisualStyleBackColor = true;
-            // 
             // Btn_generation
             // 
             this.Btn_generation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_generation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_generation.Location = new System.Drawing.Point(15, 177);
+            this.Btn_generation.Location = new System.Drawing.Point(15, 155);
             this.Btn_generation.Name = "Btn_generation";
             this.Btn_generation.Size = new System.Drawing.Size(106, 33);
             this.Btn_generation.TabIndex = 1;
@@ -141,7 +101,7 @@
             // 
             this.Btn_envoi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_envoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_envoi.Location = new System.Drawing.Point(15, 216);
+            this.Btn_envoi.Location = new System.Drawing.Point(15, 194);
             this.Btn_envoi.Name = "Btn_envoi";
             this.Btn_envoi.Size = new System.Drawing.Size(106, 33);
             this.Btn_envoi.TabIndex = 2;
@@ -151,14 +111,14 @@
             // 
             // progressBar_generation
             // 
-            this.progressBar_generation.Location = new System.Drawing.Point(127, 177);
+            this.progressBar_generation.Location = new System.Drawing.Point(127, 155);
             this.progressBar_generation.Name = "progressBar_generation";
             this.progressBar_generation.Size = new System.Drawing.Size(272, 33);
             this.progressBar_generation.TabIndex = 9;
             // 
             // progressBar_envoi
             // 
-            this.progressBar_envoi.Location = new System.Drawing.Point(127, 216);
+            this.progressBar_envoi.Location = new System.Drawing.Point(127, 194);
             this.progressBar_envoi.Name = "progressBar_envoi";
             this.progressBar_envoi.Size = new System.Drawing.Size(272, 33);
             this.progressBar_envoi.TabIndex = 10;
@@ -168,25 +128,46 @@
             this.Label_retour.AutoSize = true;
             this.Label_retour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_retour.ForeColor = System.Drawing.Color.Green;
-            this.Label_retour.Location = new System.Drawing.Point(12, 157);
+            this.Label_retour.Location = new System.Drawing.Point(12, 135);
             this.Label_retour.Name = "Label_retour";
             this.Label_retour.Size = new System.Drawing.Size(101, 17);
             this.Label_retour.TabIndex = 0;
             this.Label_retour.Text = "Label_retour";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DisplayMember = "-";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Données",
+            "Processus",
+            "Commandes"});
+            this.comboBox1.Location = new System.Drawing.Point(244, 70);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 11;
+            this.comboBox1.Tag = "";
+            this.comboBox1.ValueMember = "2";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(15, 107);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(384, 20);
+            this.textBox1.TabIndex = 12;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 261);
+            this.ClientSize = new System.Drawing.Size(411, 239);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Label_retour);
             this.Controls.Add(this.progressBar_envoi);
             this.Controls.Add(this.progressBar_generation);
             this.Controls.Add(this.Btn_envoi);
             this.Controls.Add(this.Btn_generation);
-            this.Controls.Add(this.radioButton_commandes);
-            this.Controls.Add(this.radioButton_processus);
-            this.Controls.Add(this.radioButton_donnees);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.Label_Text_typedonnee);
             this.Controls.Add(this.Label_Text_nbdonnee);
@@ -209,14 +190,13 @@
         private System.Windows.Forms.Label Label_Text_nbdonnee;
         private System.Windows.Forms.Label Label_Text_typedonnee;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.RadioButton radioButton_donnees;
-        private System.Windows.Forms.RadioButton radioButton_processus;
-        private System.Windows.Forms.RadioButton radioButton_commandes;
         private System.Windows.Forms.Button Btn_generation;
         private System.Windows.Forms.Button Btn_envoi;
         private System.Windows.Forms.ProgressBar progressBar_generation;
         private System.Windows.Forms.ProgressBar progressBar_envoi;
         private System.Windows.Forms.Label Label_retour;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
