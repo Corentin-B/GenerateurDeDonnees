@@ -16,7 +16,7 @@ namespace WindowsFormsApp1.Controleur
 
             }
 
-            return nbDonne + "+" + typeDonne + "+" + Generateur.Generateurdonnee();
+            return nbDonne + "+" + typeDonne + " " + Generateur.Generateurdonnee();
 
             //return "OK - Données prêtes";
         }
