@@ -15,10 +15,10 @@ namespace WindowsFormsApp1
             //Prenom
             string Prenom = RandFichier("Ressources\\Prenom.txt");
 
-            return Nom + "," + Prenom + ",";
+            return Nom + "," + Prenom;
         }
 
-        public static string GenerateurdonneeCommande()
+        public static string GenerateurdonneeCommande(string Nom, string Prenom)
         {
             //Pays
             string Pays = RandFichier("Ressources\\Pays.txt");
@@ -36,8 +36,27 @@ namespace WindowsFormsApp1
             Random rndo = new Random();
             System.Threading.Thread.Sleep(1);
             string Quantite = "" + rndo.Next(1, 500);
+            //Statut
+            int randstatut = rndo.Next(1, 100);
+            string Statut;
+            if(randstatut < 5)
+            {
+                Statut = "Fabrication";
+            }
+            else if(randstatut < 40)
+            {
+                Statut = "Fini";
+            }
+            else
+            {
+                Statut = "Attente";
+            }
 
-            return Pays + "," + Liste + "," + Couleur + "," + Variante + "," + Texture + "," + Conditionnement + "," + Quantite;
+
+            //Envoi vers Oracle
+            GestionEnvoi.EnvoiDonneeAuto(Nom ,Prenom ,Pays ,Liste ,Couleur ,Variante ,Texture ,Conditionnement ,Quantite ,Statut);
+
+            return "," + Pays + "," + Liste + "," + Couleur + "," + Variante + "," + Texture + "," + Conditionnement + "," + Quantite + "," + Statut;
         }
 
         private static string RandFichier(string fichier)

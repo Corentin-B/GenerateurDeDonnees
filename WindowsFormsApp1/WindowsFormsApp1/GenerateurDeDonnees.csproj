@@ -45,8 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generateur.cs" />
+    <Compile Include="Controleur\Generateur.cs" />
     <Compile Include="Controleur\GestionGeneration.cs" />
+    <Compile Include="GestionEnvoi.cs" />
     <Compile Include="Vue\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

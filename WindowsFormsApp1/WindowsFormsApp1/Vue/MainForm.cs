@@ -28,7 +28,6 @@ namespace WindowsFormsApp1
             decimal valeur = numericUpDown1.Value;
             string retour = Controleur.GestionGeneration.ControlGenerateur(Convert.ToInt32(valeur), comboBox1.Text);
             Label_retour.Text = retour;
-            textBox1.Text = retour;
             Label_retour.ForeColor = Color.Green;
         }
 
