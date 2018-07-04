@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,9 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controleur\Generateur.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="Model\ConnexionEnvoiOracle.cs" />
+    <Compile Include="Model\Generateur.cs" />
     <Compile Include="Controleur\GestionGeneration.cs" />
-    <Compile Include="GestionEnvoi.cs" />
+    <Compile Include="Controleur\GestionEnvoi.cs" />
     <Compile Include="Vue\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,8 +84,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

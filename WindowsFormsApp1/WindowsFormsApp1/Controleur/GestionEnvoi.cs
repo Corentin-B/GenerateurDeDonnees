@@ -11,12 +11,8 @@ namespace WindowsFormsApp1
     {
         public static string EnvoiDonneeAuto(string Nom, string Prenom, string Pays, string Liste, string Couleur, string Variante, string Texture, string Conditionnement, string Quantite, string Statut)
         {
-
             //Envoi Vers Oracle
-
-            string envoi = "Envoi vers Oracle";
-
-            return envoi; 
+           return ConnexionEnvoiOracle.EnvoiDonneeOracle(Nom, Prenom, Pays, Liste, Couleur, Variante, Texture, Conditionnement, Quantite, Statut);
         }
 
         public static string EnvoiDonneeManu()
@@ -28,9 +24,7 @@ namespace WindowsFormsApp1
 
                 line = sr.ReadLine();
 
-
                 //Lecture du fichier puis envoi vers Oracle
-
 
                 sr.Close();
                 return "";

@@ -34,13 +34,15 @@ namespace WindowsFormsApp1.Controleur
                     {
                         for (int j = 1; j <= rndo.Next(1, 10); j++)
                         {
-                            Commande = Generateur.GenerateurdonneeCommande(sousClient[0], sousClient[1]);
+                            //Commande = Generateur.GenerateurdonneeCommande(sousClient[0], sousClient[1]);
                             sw.WriteLine(Client + Commande);
                         }
                     }
 
-                    Commande = Generateur.GenerateurdonneeCommande(sousClient[0], sousClient[1]);
+                    //Commande = Generateur.GenerateurdonneeCommande(sousClient[0], sousClient[1]);
                     sw.WriteLine(Client + Commande);
+
+                    
                 }
                 sw.Close();
                 return "OK - Génération terminée";
@@ -67,7 +69,6 @@ namespace WindowsFormsApp1.Controleur
                 MessageBox.Show(e + "");
                 return "Erreur";
             }
-
         }
     }
 }

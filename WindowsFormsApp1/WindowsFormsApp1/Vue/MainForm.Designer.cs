@@ -33,9 +33,6 @@
             this.Label_Text_typedonnee = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.Btn_generation = new System.Windows.Forms.Button();
-            this.Btn_envoi = new System.Windows.Forms.Button();
-            this.progressBar_generation = new System.Windows.Forms.ProgressBar();
-            this.progressBar_envoi = new System.Windows.Forms.ProgressBar();
             this.Label_retour = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -94,46 +91,20 @@
             // 
             this.Btn_generation.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_generation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_generation.Location = new System.Drawing.Point(15, 117);
+            this.Btn_generation.Location = new System.Drawing.Point(12, 122);
             this.Btn_generation.Name = "Btn_generation";
-            this.Btn_generation.Size = new System.Drawing.Size(106, 33);
+            this.Btn_generation.Size = new System.Drawing.Size(387, 33);
             this.Btn_generation.TabIndex = 1;
             this.Btn_generation.Text = "Génération";
             this.Btn_generation.UseVisualStyleBackColor = true;
             this.Btn_generation.Click += new System.EventHandler(this.Btn_Generation_Click);
-            // 
-            // Btn_envoi
-            // 
-            this.Btn_envoi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_envoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_envoi.Location = new System.Drawing.Point(15, 156);
-            this.Btn_envoi.Name = "Btn_envoi";
-            this.Btn_envoi.Size = new System.Drawing.Size(106, 33);
-            this.Btn_envoi.TabIndex = 2;
-            this.Btn_envoi.Text = "Envoi";
-            this.Btn_envoi.UseVisualStyleBackColor = true;
-            this.Btn_envoi.Click += new System.EventHandler(this.Btn_Envoi_Click);
-            // 
-            // progressBar_generation
-            // 
-            this.progressBar_generation.Location = new System.Drawing.Point(127, 117);
-            this.progressBar_generation.Name = "progressBar_generation";
-            this.progressBar_generation.Size = new System.Drawing.Size(272, 33);
-            this.progressBar_generation.TabIndex = 9;
-            // 
-            // progressBar_envoi
-            // 
-            this.progressBar_envoi.Location = new System.Drawing.Point(127, 156);
-            this.progressBar_envoi.Name = "progressBar_envoi";
-            this.progressBar_envoi.Size = new System.Drawing.Size(272, 33);
-            this.progressBar_envoi.TabIndex = 10;
             // 
             // Label_retour
             // 
             this.Label_retour.AutoSize = true;
             this.Label_retour.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label_retour.ForeColor = System.Drawing.Color.Green;
-            this.Label_retour.Location = new System.Drawing.Point(12, 97);
+            this.Label_retour.Location = new System.Drawing.Point(9, 102);
             this.Label_retour.Name = "Label_retour";
             this.Label_retour.Size = new System.Drawing.Size(101, 17);
             this.Label_retour.TabIndex = 0;
@@ -159,12 +130,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(411, 201);
+            this.ClientSize = new System.Drawing.Size(411, 167);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.Label_retour);
-            this.Controls.Add(this.progressBar_envoi);
-            this.Controls.Add(this.progressBar_generation);
-            this.Controls.Add(this.Btn_envoi);
             this.Controls.Add(this.Btn_generation);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.Label_Text_typedonnee);
@@ -189,9 +157,6 @@
         private System.Windows.Forms.Label Label_Text_typedonnee;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Button Btn_generation;
-        private System.Windows.Forms.Button Btn_envoi;
-        private System.Windows.Forms.ProgressBar progressBar_generation;
-        private System.Windows.Forms.ProgressBar progressBar_envoi;
         private System.Windows.Forms.Label Label_retour;
         private System.Windows.Forms.ComboBox comboBox1;
     }
