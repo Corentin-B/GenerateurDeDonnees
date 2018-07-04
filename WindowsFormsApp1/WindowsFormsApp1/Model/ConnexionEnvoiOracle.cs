@@ -10,29 +10,29 @@ namespace WindowsFormsApp1
 {
     class ConnexionEnvoiOracle
     {
-        static OracleConnection con;
-
-        public void ConnectionOracle()
-        {
-            con = new OracleConnection(" Data Source = projet-data-v2.c5iadtb7wbsy.eu-west-1.rds.amazonaws.com:1521/orcl; User ID = projet_data; Password = DouilleD4ta");
-            con.Open();
-        }
-
         public static string EnvoiDonneeOracle(string Nom, string Prenom, string Pays, string Liste, string Couleur, string Variante, string Texture, string Conditionnement, string Quantite, string Statut)
         {
             try
             {
-                OracleCommand cmd = con.CreateCommand();
+                OracleConnection con = new OracleConnection(" Data Source = projet-data-v2.c5iadtb7wbsy.eu-west-1.rds.amazonaws.com:1521/orcl; User ID = dbadmin; Password = DouilleD4ta");
 
-                cmd.CommandText = "INSERT INTO Customers VALUES ('"+Nom + Prenom+"')";
-                cmd.CommandText = "INSERT INTO Orders VALUES ('"+Pays + " " + Liste + " " + Couleur + " " + Variante + " " + Texture + " " + Conditionnement + " " + Quantite + " " + Statut +"')";
-                //cmd.CommandText = "INSERT INTO Customers VALUES('"+Nom + Prenom+"')";
+                var commandText = "INSERT INTO Orders (VARIANT,TEXTURE,COLORS,QUANTITY,CONDITIONNING,NAME,NAME_CANDY_TYPE,NAME_COUNTRY) VALUES(:Variante, :Texture, :Couleur, :Quantite, :Conditionnement, :Nprenom, :Liste, :Pays)";
+                string Nprenom = Nom + " " + Prenom;
 
+                OracleCommand cmd2 = new OracleCommand(commandText, con);
 
-                OracleDataReader reader = cmd.ExecuteReader();
-//                reader.Read();
-                reader.Dispose();
-                cmd.Dispose();
+                cmd2.Parameters.Add(new OracleParameter(":Variante", Variante));
+                cmd2.Parameters.Add(new OracleParameter(":Texture", Texture));
+                cmd2.Parameters.Add(new OracleParameter(":Couleur", Couleur));
+                cmd2.Parameters.Add(new OracleParameter(":Quantite", Quantite));
+                cmd2.Parameters.Add(new OracleParameter(":Conditionnement", Conditionnement));
+                cmd2.Parameters.Add(new OracleParameter(":Nprenom", Nprenom));
+                cmd2.Parameters.Add(new OracleParameter(":Liste", Liste));
+                cmd2.Parameters.Add(new OracleParameter(":Pays", Pays));
+
+                con.Open();
+                cmd2.ExecuteNonQuery();
+                con.Close();
             }
             catch (Exception e)
             {

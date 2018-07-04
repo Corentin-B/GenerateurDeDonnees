@@ -23,35 +23,14 @@ namespace WindowsFormsApp1
 
             Label_retour.Text = "Génération en cours";
             Label_retour.ForeColor = Color.Orange;
- //           progressBar_generation.Value = 0;
-//            progressBar_envoi.Value = 0;
-//            progressBar_generation.Maximum = Convert.ToInt32(valeur);
-
-            //progressBar_generation.Value = 100;
-
+            Label_retour.Update();
 
             string retour = Controleur.GestionGeneration.ControlGenerateur(Convert.ToInt32(valeur), comboBox1.Text);
             Label_retour.Text = retour;
             Label_retour.ForeColor = Color.Green;
+            Label_retour.Update();
         }
 
- /*       private void Btn_Envoi_Click(object sender, EventArgs e)
-        {
-            Label_retour.Text = "";
-            progressBar_envoi.Value = 0;
-
-            
-
-            progressBar_envoi.Value = 23;
-            Label_retour.Text = "Erreur - Pas de connexion Oracle";
-            Label_retour.ForeColor = Color.Red;
-
-
-            Label_retour.Text = Controleur.GestionGeneration.Test();
-            
-            //Call envoi oracle
-        }
-*/
         private void MainForm_Load(object sender, EventArgs e)
         {
             Label_retour.Text = "";

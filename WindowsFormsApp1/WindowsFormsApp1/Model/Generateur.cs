@@ -71,5 +71,15 @@ namespace WindowsFormsApp1
 
             return lignes[nombrerandom];
         }
+
+        public static string GenerateurdonneeMachine()
+        {
+            //Nom
+            string Nom = RandFichier("Ressources\\Nom.txt");
+            //Prenom
+            string Prenom = RandFichier("Ressources\\Prenom.txt");
+
+            return Nom + "," + Prenom;
+        }
     }
 }
