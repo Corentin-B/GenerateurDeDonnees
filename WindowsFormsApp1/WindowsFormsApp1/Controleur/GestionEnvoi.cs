@@ -14,5 +14,11 @@ namespace WindowsFormsApp1
             //Envoi Vers Oracle
            return ConnexionEnvoiOracle.EnvoiDonneeOracle(Nom, Prenom, Pays, Liste, Couleur, Variante, Texture, Conditionnement, Quantite, Statut);
         }
+
+        public static string EnvoiMechineAuto(string Id)
+        {
+            //Envoi Vers Oracle
+            return ConnexionEnvoiOracle.EnvoiMechineOracle(Id);
+        }
     }
 }

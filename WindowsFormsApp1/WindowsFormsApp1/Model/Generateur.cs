@@ -52,7 +52,6 @@ namespace WindowsFormsApp1
                 Statut = "Attente";
             }
 
-
             //Envoi vers Oracle
             GestionEnvoi.EnvoiDonneeAuto(Nom ,Prenom ,Pays ,Liste ,Couleur ,Variante ,Texture ,Conditionnement ,Quantite ,Statut);
 
@@ -72,14 +71,23 @@ namespace WindowsFormsApp1
             return lignes[nombrerandom];
         }
 
-        public static string GenerateurdonneeMachine()
+        public static string GenerateurdonneeMachine(int Id)
         {
-            //Nom
-            string Nom = RandFichier("Ressources\\Nom.txt");
-            //Prenom
-            string Prenom = RandFichier("Ressources\\Prenom.txt");
+            Random rnd = new Random();
 
-            return Nom + "," + Prenom;
+            int jour = rnd.Next(1, 30);
+            int moi = rnd.Next(1, 12);
+            int annee = rnd.Next(2018, 2020);
+
+            string dateDebut = jour+"/"+moi+"/"+annee;
+
+            jour = jour + rnd.Next(1, 5);
+
+            string dateFin = jour+"/"+moi+"/"+annee;
+
+            GestionEnvoi.EnvoiMechineAuto(Convert.ToString(Id), dateDebut, dateFin);
+
+            return "";
         }
     }
 }

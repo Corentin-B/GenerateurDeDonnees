@@ -42,5 +42,65 @@ namespace WindowsFormsApp1
 
             return "OK - Envoie Teminée";
         }
+
+        public static string LectureDonneeOracle()
+        {
+            try
+            {
+                OracleConnection con = new OracleConnection(" Data Source = projet-data-v2.c5iadtb7wbsy.eu-west-1.rds.amazonaws.com:1521/orcl; User ID = dbadmin; Password = DouilleD4ta");
+
+                var commandText = "SELECT id FROM Orders WHERE Statut = 'Attente'";
+
+                OracleCommand cmd = new OracleCommand(commandText, con);
+
+                con.Open();
+
+                OracleDataReader reader;
+                reader = cmd.ExecuteReader();
+
+                string ValeurRetour = "";
+
+                while (reader.Read())
+                {
+                    ValeurRetour = ValeurRetour + "," + reader.GetInt32(0);
+                }
+
+                con.Close();
+
+                return ValeurRetour;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                return "Erreur";
+            }
+        }
+
+        public static string EnvoiMechineOracle(string Id, string dateDebut, string dateFin)
+        {
+            try
+            {
+                OracleConnection con = new OracleConnection(" Data Source = projet-data-v2.c5iadtb7wbsy.eu-west-1.rds.amazonaws.com:1521/orcl; User ID = dbadmin; Password = DouilleD4ta");
+
+                var commandText = "INSERT INTO Orders (Id,Time_Start,Time_Stop) VALUES(:Id, :dateDebut, :dateFin)";
+
+                OracleCommand cmd1 = new OracleCommand(commandText, con);
+
+                cmd1.Parameters.Add(new OracleParameter(":Id", Id));
+                cmd1.Parameters.Add(new OracleParameter(":dateDebut", dateDebut));
+                cmd1.Parameters.Add(new OracleParameter(":dateFin", dateFin));
+
+                con.Open();
+                cmd1.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e + "");
+                return "Erreur";
+            }
+
+            return "OK - Traitement Teminée";
+        }
     }
 }

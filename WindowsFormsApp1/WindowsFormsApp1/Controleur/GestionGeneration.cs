@@ -10,7 +10,7 @@ namespace WindowsFormsApp1.Controleur
 {
     class GestionGeneration
     {
-        public static string ControlGenerateur(int nbDonne, string typeDonne)
+        public static string ControlGenerateur(int nbDonne)
         {
             try
             {
@@ -39,7 +39,16 @@ namespace WindowsFormsApp1.Controleur
                     sw.WriteLine(Client + Commande);
                 }
                 sw.Close();
-                return "OK - Génération terminée";
+
+                string ValMachine = ConnexionEnvoiOracle.LectureDonneeOracle();
+
+                String[] sousMachine = ValMachine.Split(',');
+
+                foreach(string valeur in sousMachine)
+                {
+                    Generateur.GenerateurdonneeMachine(Convert.ToInt32(valeur));
+                }
+                    return "OK - Génération terminée";
             }
             catch (Exception e)
             {

@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
             Label_retour.ForeColor = Color.Orange;
             Label_retour.Update();
 
-            string retour = Controleur.GestionGeneration.ControlGenerateur(Convert.ToInt32(valeur), comboBox1.Text);
+            string retour = Controleur.GestionGeneration.ControlGenerateur(Convert.ToInt32(valeur));
             Label_retour.Text = retour;
             Label_retour.ForeColor = Color.Green;
             Label_retour.Update();
