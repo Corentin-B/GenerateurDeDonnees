@@ -45,7 +45,6 @@ namespace WindowsFormsApp1.Controleur
 
                 String[] sousMachine = ValMachine.Split(',');
 
-
                 foreach (string valeur in sousMachine)
                 {
                     if(valeur != "")

@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
             string Conditionnement = RandFichier("Ressources\\Conditionnement.txt");
             //Quantité
             Random rndo = new Random();
-            System.Threading.Thread.Sleep(1);
+           // System.Threading.Thread.Sleep(1);
             string Quantite = "" + rndo.Next(1, 500);
             //Statut
             int randstatut = rndo.Next(1, 100);
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
         {
             string[] lignes = System.IO.File.ReadAllLines(fichier);
 
-            System.Threading.Thread.Sleep(1);
+            //System.Threading.Thread.Sleep(1);
 
             Random rnd = new Random();
             int nombrerandom = rnd.Next(1, lignes.Length);
