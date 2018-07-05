@@ -32,6 +32,7 @@ namespace WindowsFormsApp1.Controleur
                         {
                             Commande = Generateur.GenerateurdonneeCommande(sousClient[0], sousClient[1]);
                             sw.WriteLine(Client + Commande);
+                            i++;
                         }
                     }
 
@@ -44,11 +45,16 @@ namespace WindowsFormsApp1.Controleur
 
                 String[] sousMachine = ValMachine.Split(',');
 
-                foreach(string valeur in sousMachine)
+
+                foreach (string valeur in sousMachine)
                 {
-                    Generateur.GenerateurdonneeMachine(Convert.ToInt32(valeur));
+                    if(valeur != "")
+                    { 
+                        Generateur.GenerateurdonneeMachine(valeur, "Conditionnement");
+                        Generateur.GenerateurdonneeMachine(valeur, "Fabrication");
+                    }
                 }
-                    return "OK - Génération terminée";
+                return "OK - Génération et Traitement de la Base : terminée";
             }
             catch (Exception e)
             {

@@ -29,6 +29,9 @@ namespace WindowsFormsApp1
             Label_retour.Text = retour;
             Label_retour.ForeColor = Color.Green;
             Label_retour.Update();
+
+            this.TopMost = true;
+            this.TopMost = false;
         }
 
         private void MainForm_Load(object sender, EventArgs e)

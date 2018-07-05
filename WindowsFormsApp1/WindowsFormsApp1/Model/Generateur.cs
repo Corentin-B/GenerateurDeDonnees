@@ -71,9 +71,11 @@ namespace WindowsFormsApp1
             return lignes[nombrerandom];
         }
 
-        public static string GenerateurdonneeMachine(int Id)
+        public static string GenerateurdonneeMachine(string Id, string type)
         {
             Random rnd = new Random();
+
+            int IdMachine = rnd.Next(1, 5);
 
             int jour = rnd.Next(1, 30);
             int moi = rnd.Next(1, 12);
@@ -85,7 +87,7 @@ namespace WindowsFormsApp1
 
             string dateFin = jour+"/"+moi+"/"+annee;
 
-            GestionEnvoi.EnvoiMechineAuto(Convert.ToString(Id), dateDebut, dateFin);
+            GestionEnvoi.EnvoiMechineAuto(IdMachine, Id, dateDebut, dateFin, type);
 
             return "";
         }
